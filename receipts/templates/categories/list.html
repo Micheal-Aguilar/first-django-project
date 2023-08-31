@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
+{% block content %}
   <main>
     <h1>My Categories</h1>
     <table>
@@ -19,15 +12,12 @@
       </thead>
       <tbody>
         {% for category in categories %}
-        <tr>
-          <td>{{ category.name }}</td>
-          <td>{{ category.receipts.all|length }}</td>
-        </tr>
+          <tr>
+            <td>{{ category.name }}</td>
+            <td>{{ category.receipts.all|length }}</td>
+          </tr>
         {% endfor %}
       </tbody>
     </table>
   </main>
-
-</body>
-
-</html>
+{% endblock content %}

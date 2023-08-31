@@ -3,36 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>List of Receipts</title>
 </head>
 
 <body>
-
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <ul>
-            {% if user.is_authenticated %}
-              <li><a href="{% url 'category_list' %}">Expense Categories</a></li>
-              <li><a href="{% url 'create_category' %}">Create Category</a></li>
-              <li><a href="{% url 'account_list' %}">Accounts</a></li>
-              <li><a href="{% url 'create_account' %}">Create Account</a></li>
-              <li><a href="{% url 'receipt_list' %}">Receipts</a></li>
-              <li><a href="{% url 'create_receipt' %}">Create Receipt</a></li>
-              <li><a href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-              <li><a href="{% url 'signup' %}">Sign Up</a></li>
-              <li><a href="{% url 'login' %}">Login</a></li>
-            {% endif %}
-        </ul>
-      </nav>
-    </header>
-    <main>
-      {% block content %}{% endblock %}
-    </main>
-  </body>
+  {% block content %}
+  {% endblock content %}
 </body>
 
 </html>
